@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<link rel="import" href="../paper-toast/paper-toast.html">
+
+<dom-module id="sw-update-toast">
+  <template>
+    <style>
+      span {
+        margin-right: 1em;
+      }
+      a {
+        color: var(--primary-color, orange);
+      }
+    </style>
+    <paper-toast id="toast" duration="[[ duration ]]" opened="[[ demo ]]">
+      <span>
+        [[ message ]]
+      </span>
+      <a href on-click="_reload">Reload</a>
+    </paper-toast>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class SWUpdateToast extends Polymer.Element {
+      static get is() { return 'sw-update-toast'; }
+
+      static get properties() {
+        return {
+          message: {
+            type: String,
+            value: "Site update available!",
+          },
+          duration: {
+            type: Number,
+            value: 0,
+          },
+          demo: {
+            type: Boolean,
+            value: false,
+          }
+        };
+      }
+
+      ready() {
+        super.ready();
+
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistration().then((registration) => {
+            registration.addEventListener('updatefound', () => {
+              this.$.toast.open();
+            });
+          });
+        }
+      }
+
+      _reload() {
+        window.location.reload();
+      }
+    }
+
+    customElements.define(SWUpdateToast.is, SWUpdateToast);
+  </script>
+</dom-module>

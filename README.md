@@ -1,0 +1,47 @@
+# Polymer 2 components to work with ServiceWorkers
+
+## HowTo
+
+### Register service-worker
+
+Since its more or less a one-liner to register your ServiceWorker and included in most boilerplates there is no specific element.
+
+```html
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js');
+    });
+  }
+</script>
+```
+
+### \<sw-update-toast\>
+
+Displays a toast requesting the user to reload the page when an update is available.
+
+The update message can be overwriten by setting `message` (optional). The display time can be changed by setting `duration`, defaults to 0 / persistend.
+
+```html
+<link rel="import" href="serviceworker-helpers/sw-update-toast.html">
+
+<sw-update-toast
+  message="My message"
+  duration="5"
+></sw-update-toast>
+```
+
+Change the link color by setting the css var `--primary-color`.
+
+## Development
+
+```bash
+# Get dependencies
+$ npm install
+
+# Demo site
+$ npm start
+
+# Run tests
+$ npm test
+```

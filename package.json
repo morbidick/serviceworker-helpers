@@ -1,0 +1,23 @@
+{
+  "name": "serviceworker-helpers",
+  "description": "Display a toast message on available service worker update",
+  "author": "morbidick",
+  "license": "MIT",
+  "main": "sw-update-toast.html",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "polymer-cli": "^1.0.0"
+  },
+  "scripts": {
+    "start": "sh -c 'npm run serve'",
+    "init": "polymer init",
+    "serve": "polymer serve",
+    "build": "polymer build",
+    "lint": "polymer lint",
+    "test": "npm run lint #&& polymer test",
+    "postinstall": "bower install",
+    "wcinstall": "bower install --save",
+    "wcupdate": "bower update"
+  },
+  "devDependencies": {}
+}
