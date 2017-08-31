@@ -20,22 +20,33 @@
 
   <script>
     /**
+     * # Service worker update toast
+     * `<sw-update-toast>` displays a toast requesting the user to reload the page when a source code update is available.
+     *
+     * ## Styling
+     *   * `--primary-color`,  link color defaults to orange
+     *
      * @customElement
      * @polymer
+     * @demo demo/index.html
+     *
      */
     class SWUpdateToast extends Polymer.Element {
       static get is() { return 'sw-update-toast'; }
 
       static get properties() {
         return {
+          /** message to display */
           message: {
             type: String,
             value: "Site update available!",
           },
+          /** duration the toast should be shown, default 0 to persist. */
           duration: {
             type: Number,
             value: 0,
           },
+          /** demo mode, open the toast */
           demo: {
             type: Boolean,
             value: false,

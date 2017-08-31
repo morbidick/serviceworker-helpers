@@ -13,7 +13,7 @@
     "init": "polymer init",
     "serve": "polymer serve",
     "build": "polymer build",
-    "analyze": "polymer analyze",
+    "analyze": "polymer analyze > analysis.json",
     "lint": "polymer lint",
     "test": "polymer test",
     "postinstall": "bower install",
