@@ -1,6 +1,10 @@
 {
   "name": "serviceworker-helpers",
-  "main": "serviceworker-helpers.html",
+  "main": "sw-update-toast.html",
+  "license": "MIT",
+  "demos": {
+    "Demo": "demo/index.html"
+  },
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
     "paper-toast": "PolymerElements/paper-toast#^2.0.0"

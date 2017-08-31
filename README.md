@@ -1,5 +1,7 @@
 # Polymer 2 components to work with Service Workers
 
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/morbidick/serviceworker-helpers)
+
 ## HowTo
 
 ### Register service worker
