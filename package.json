@@ -9,12 +9,13 @@
     "polymer-cli": "^1.0.0"
   },
   "scripts": {
-    "start": "sh -c 'npm run serve'",
+    "start": "npm run serve",
     "init": "polymer init",
     "serve": "polymer serve",
     "build": "polymer build",
+    "analyze": "polymer analyze",
     "lint": "polymer lint",
-    "test": "npm run lint #&& polymer test",
+    "test": "polymer test",
     "postinstall": "bower install",
     "wcinstall": "bower install --save",
     "wcupdate": "bower update"

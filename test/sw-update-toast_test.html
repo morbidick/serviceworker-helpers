@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>sw-update-toast test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../sw-update-toast.html">
+  </head>
+  <body>
+
+    <test-fixture id="Basic">
+      <template>
+        <sw-update-toast></sw-update-toast>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ChangeMessage">
+      <template>
+        <sw-update-toast message="test-text"></sw-update-toast>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="ChangeDuration">
+      <template>
+        <sw-update-toast duration="5"></sw-update-toast>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="DemoMode">
+      <template>
+        <sw-update-toast demo></sw-update-toast>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('sw-update-toast', function() {
+
+        test('instantiating the element with default properties', function() {
+          var element = fixture('Basic');
+          assert.equal(element.message, 'Site update available!');
+          assert.equal(element.duration, 0);
+          var elementShadowRoot = element.shadowRoot;
+          var elementMessage = elementShadowRoot.querySelector('span');
+          var elementToast = elementShadowRoot.querySelector('paper-toast');
+          assert.equal(elementMessage.innerHTML, 'Site update available!');
+          assert.equal(elementToast.duration, 0);
+        });
+
+        test('changing the default message', function() {
+          var element = fixture('ChangeMessage');
+          assert.equal(element.message, 'test-text');
+          var elementShadowRoot = element.shadowRoot;
+          var elementMessage = elementShadowRoot.querySelector('span');
+          assert.equal(elementMessage.innerHTML, 'test-text');
+        });
+
+        test('changing the default duration', function() {
+          var element = fixture('ChangeDuration');
+          assert.equal(element.duration, 5);
+          var elementShadowRoot = element.shadowRoot;
+          var elementToast = elementShadowRoot.querySelector('paper-toast');
+          assert.equal(elementToast.duration, 5);
+        });
+
+        test('setting demo mode opens toast', function() {
+          var element = fixture('DemoMode');
+          assert.equal(element.demo, true);
+          var elementShadowRoot = element.shadowRoot;
+          var elementToast = elementShadowRoot.querySelector('paper-toast');
+          assert.equal(elementToast.opened, true);
+        });
+
+      });
+    </script>
+
+  </body>
+</html>
