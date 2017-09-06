@@ -60,9 +60,11 @@
 
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.getRegistration().then((registration) => {
-            registration.addEventListener('updatefound', () => {
-              this.$.toast.open();
-            });
+            if (registration !== undefined) {
+              registration.addEventListener('updatefound', () => {
+                this.$.toast.open();
+              });
+            }
           });
         }
       }
