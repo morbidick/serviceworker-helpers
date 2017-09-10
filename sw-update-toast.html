@@ -61,9 +61,11 @@
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.getRegistration().then((registration) => {
-              registration.addEventListener('updatefound', () => {
-                this.$.toast.open();
-              });
+              if (registration) {
+                registration.addEventListener('updatefound', () => {
+                  this.$.toast.open();
+                });
+              }
             });
           });
         }
