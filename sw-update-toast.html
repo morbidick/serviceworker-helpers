@@ -59,12 +59,14 @@
         super.ready();
 
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.getRegistration().then((registration) => {
-            if (registration !== undefined) {
-              registration.addEventListener('updatefound', () => {
-                this.$.toast.open();
-              });
-            }
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.getRegistration().then((registration) => {
+              if (registration) {
+                registration.addEventListener('updatefound', () => {
+                  this.$.toast.open();
+                });
+              }
+            });
           });
         }
       }
