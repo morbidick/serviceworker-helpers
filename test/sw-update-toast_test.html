@@ -31,9 +31,9 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="DemoMode">
+    <test-fixture id="Opened">
       <template>
-        <sw-update-toast demo></sw-update-toast>
+        <sw-update-toast opened></sw-update-toast>
       </template>
     </test-fixture>
 
@@ -67,9 +67,9 @@
           assert.equal(elementToast.duration, 5);
         });
 
-        test('setting demo mode opens toast', function() {
-          var element = fixture('DemoMode');
-          assert.equal(element.demo, true);
+        test('setting opened mode opens toast', function() {
+          var element = fixture('Opened');
+          assert.equal(element.opened, true);
           var elementShadowRoot = element.shadowRoot;
           var elementToast = elementShadowRoot.querySelector('paper-toast');
           assert.equal(elementToast.opened, true);

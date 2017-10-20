@@ -13,9 +13,9 @@
         text-decoration: none;
       }
     </style>
-    <paper-toast id="toast" duration="[[ duration ]]" opened="[[ demo ]]">
+    <paper-toast id="toast" duration="[[ duration ]]" opened="[[ opened ]]">
       <span>[[ message ]]</span>
-      <a href on-click="_reload">Reload</a>
+      <a href on-click="_reload">[[ buttonLabel ]]</a>
     </paper-toast>
   </template>
 
@@ -42,13 +42,19 @@
             type: String,
             value: "Site update available!",
           },
+
+          /** label for reload button */
+          buttonLabel: {
+            type: String,
+            value: "Reload",
+          },
           /** duration the toast should be shown, default 0 to persist. */
           duration: {
             type: Number,
             value: 0,
           },
-          /** demo mode, open the toast */
-          demo: {
+          /** open the toast */
+          opened: {
             type: Boolean,
             value: false,
           }
