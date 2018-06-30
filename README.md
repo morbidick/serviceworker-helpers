@@ -1,7 +1,7 @@
 # Polymer 2 components to work with Service Workers
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/morbidick/serviceworker-helpers)
-[![Build Status](https://travis-ci.org/morbidick/serviceworker-helpers.svg?branch=master)](https://travis-ci.org/morbidick/serviceworker-helpers)
+[![Build Status](https://travis-ci.org/morbidick/serviceworker-helpers.svg?branch=master)](https://travis-ci.org/morbidick/serviceworker-helpers) [![Greenkeeper badge](https://badges.greenkeeper.io/morbidick/serviceworker-helpers.svg)](https://greenkeeper.io/)
 
 ## HowTo
 
